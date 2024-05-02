@@ -24,15 +24,20 @@ while true; do
 
 	# Si el archivo no existe, crearlo
 	if [ ! -f "$directorio_datos/$archivo_datos" ]; then
-	    echo "Hola"
 	    > "$directorio_datos/$archivo_datos"
 	    chmod +w "$directorio_datos/$archivo_datos"
 	fi
     
 	python "$directorio_script/scraper.py" | awk -F "," -v hora="$hora_actual" '{print $1 "," $2 "," $6 "," $7 "," substr(hora, 1, 2) ":" substr(hora, 3, 2)}' >> "$directorio_datos/$archivo_datos"
-    
-    fi
 
+    elif [ "$hora_actual" -gt "1830" ]; then
+	 # Verficar si hay un archivo para guardar
+	if [ -f "$directorio_datos/$archivo_datos" ]; then
+	    hdfs dfs -mkdir -p "proyecto_despliegue/datos"
+	    hdfs dfs -put "$directorio_datos/$archivo_datos" "proyecto_despliegue/datos/$archivo_datos"
+         fi
+    fi
+	 
 
     # Dormir 1 h
     sleep 3600
