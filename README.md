@@ -9,6 +9,7 @@
 
 - [Estructura del proyecto](#structure)
 - [Recopilando datos](#extract_data)
+- [Autores](#authors)
 
 ## ⚒️ Estructura del Proyecto <a name = "structure"> </a>
 
@@ -52,7 +53,7 @@ start-dfs.sh
 cd 4B_BigData_Despliegue/src/extract/
 ```
 
-1. Dar permisos de ejecución a los siguientes ficheros
+3. Dar permisos de ejecución a los siguientes ficheros
 
 ```
 chmod +x dataExtraction.sh
@@ -69,3 +70,8 @@ chmod +x geckodriver
 ```
 sh dataExtraction.sh
 ```
+
+## ✒️ Autores <a name = "authors"> </a>
+
+* **Claudia Torres** - [ClaudiaTC02](https://github.com/ClaudiaTC02)
+* **Jordi Doménech** - [Jordi272](https://github.com/Jordi272)
