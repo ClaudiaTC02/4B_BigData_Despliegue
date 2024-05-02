@@ -1,0 +1,21 @@
+# Ignorar archivos generados por el sistema
+.DS_Store
+Thumbs.db
+
+# Ignorar archivos de respaldo de emacs
+*~
+
+# Ignorar archivos pycache
+__pycache__
+
+# Ignorar archivos generados por la ejecución de scripts
+datos/*.csv~
+src/extract/*.py~
+
+# Ignorar archivos generados por la compilación
+*.o
+*.out
+
+# Ignorar archivos de configuración específicos del usuario
+*.ini
+*.conf
