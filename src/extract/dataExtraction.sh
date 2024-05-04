@@ -20,7 +20,7 @@ while true; do
 
     # Hora en el que funcionará el script: de 9:30 a 18:30 de lunes a viernes
 
-    if [ "$hora_actual" -ge "0930" ] && [ "$hora_actual" -le "1830" ] && [ "$dia_semana" -ge 1 ] && [ "$dia_semana" -le 5 ]; then
+    if [ "$hora_actual" -ge "0930" ] && [ "$hora_actual" -le "1830" ] && [ "$dia_semana" -ge 1 ] && [ "$dia_semana" -le 7 ]; then
 
 	# Si el archivo no existe, crearlo
 	if [ ! -f "$directorio_datos/$archivo_datos" ]; then
