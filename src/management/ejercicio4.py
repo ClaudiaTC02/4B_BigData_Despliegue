@@ -14,12 +14,12 @@ class Ejercicio4(MRJob):
         accion=self.options.accion
         palabras=linea.split(",")
 
-        nombre=palabras[1]
+        nombre=palabras[0]
         if(str(nombre) == str(accion)):
-            maximo_sesion=float(palabras[3])
-            minimo_sesion=float(palabras[4])
-            hora=palabras[5]
-            fecha=palabras[0]
+            maximo_sesion=float(palabras[2].replace(".", "").replace(",", "."))
+            minimo_sesion=float(palabras[3].replace(".", "").replace(",", "."))
+            hora=palabras[4]
+            fecha=palabras[5]
             yield(nombre, (maximo_sesion, minimo_sesion, fecha, hora))
                             
         

@@ -14,26 +14,27 @@ class Ejercicio3(MRJob):
 
         nombre=palabras[0]
         if(str(nombre) == str(accion)):
-            ultima_coti=float(palabras[1])
+            ultima_coti=float(palabras[1].replace(".", "").replace(",", "."))
             fecha=palabras[5]
-            yield(nombre, (fecha, ultima_coti))
+            maximo_sesion=float(palabras[2].replace(".", "").replace(",", "."))
+            minimo_sesion=float(palabras[3].replace(".", "").replace(",", "."))
+            yield(nombre, (fecha, ultima_coti, maximo_sesion, minimo_sesion))
                             
         
     def reducer(self, accion, valores):
 
         cotizaciones = list(valores)
-        
-        cotizaciones.sort(key=lambda x: datetime.datetime.strptime(x[0], "%d-%m-%Y"))
 
-        cotizacion_inicial = cotizaciones[0][1]
-
-        cotizaciones = [coti[1] for coti in cotizaciones]
+        minimos = [minimo[3] for minimo in cotizaciones]
+        maximos = [maximo[2] for maximo in cotizaciones]
         # calcular valor minimo de cotización
-        valor_minimo = min(cotizaciones)
+        valor_minimo = min(minimos)
         # calcular valor máximo de cotización
-        valor_maximo = max(cotizaciones)
+        valor_maximo = max(maximos)
 
         # Ordenar cotizaciones por fecha
+        cotizaciones.sort(key=lambda x: datetime.datetime.strptime(x[0], "%d-%m-%Y"))
+        cotizacion_inicial = cotizaciones[0][1]
 
         # calcular el portentaje de decremento desde el valor inicial de cotización hasta el mínimo
         decremento_porcentaje = ((cotizacion_inicial - valor_minimo) / cotizacion_inicial) * 100

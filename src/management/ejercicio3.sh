@@ -39,7 +39,7 @@ done
 
 archivo_mapreducer="$directorio_script/ejercicio3.py"
 
-python "$archivo_mapreducer" "$directorio_datos/$archivo_semanal" --accion "$nombre_accion"
+python "$archivo_mapreducer" "$directorio_datos/$archivo_semanal" --accion "$nombre_accion" 
 
 # Eliminar el archivo
 rm "$directorio_datos/$archivo_semanal"

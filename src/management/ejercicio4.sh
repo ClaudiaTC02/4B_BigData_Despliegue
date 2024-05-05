@@ -27,7 +27,7 @@ ls "$directorio_datos" | while read -r archivo; do
 
 	# Agregar la fecha a cada línea del archivo actual y concatenar
         while IFS= read -r linea; do
-            echo "$fecha_archivo,$linea" >> "$directorio_datos/$archivo_mes"
+            echo "$linea,$fecha_archivo" >> "$directorio_datos/$archivo_mes"
         done < "$directorio_datos/$archivo"
     fi
     
