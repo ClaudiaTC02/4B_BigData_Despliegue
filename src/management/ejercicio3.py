@@ -1,5 +1,6 @@
 from mrjob.step import MRStep
 from mrjob.job import MRJob
+import datetime
 
 class Ejercicio3(MRJob):
 
@@ -22,7 +23,8 @@ class Ejercicio3(MRJob):
 
         cotizaciones = list(valores)
         
-        cotizaciones.sort(key=lambda x: x[0])
+        cotizaciones.sort(key=lambda x: datetime.datetime.strptime(x[0], "%d-%m-%Y"))
+
         cotizacion_inicial = cotizaciones[0][1]
 
         cotizaciones = [coti[1] for coti in cotizaciones]
@@ -39,7 +41,7 @@ class Ejercicio3(MRJob):
         # calcular el portentaje de incremento desde el valor inicial de cotización hasta el máximo
         incremento_porcentaje = ((valor_maximo - cotizacion_inicial) / cotizacion_inicial) * 100
 
-        yield(accion, (valor_minimo, valor_maximo, decremento_porcentaje, incremento_porcentaje, cotizacion_inicial))
+        yield(accion, (valor_minimo, valor_maximo, decremento_porcentaje, incremento_porcentaje))
   
 
 
