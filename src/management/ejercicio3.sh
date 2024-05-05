@@ -26,8 +26,12 @@ ls "../$directorio_script/datos/" | while read -r archivo; do
 	if [ ! -f "$directorio_datos/$archivo_semanal" ]; then
 	    > "$directorio_datos/$archivo_semanal"
 	fi
+
+	# Agregar la fecha a cada línea del archivo actual y concatenar
+        while IFS= read -r linea; do
+            echo "$linea,$fecha_archivo" >> "$directorio_datos/$archivo_semanal"
+        done < "$directorio_datos/$archivo"
 	
-        cat "$directorio_datos/$archivo" >> "$directorio_datos/$archivo_semanal"
     fi
     
 

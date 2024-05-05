@@ -14,34 +14,32 @@ class Ejercicio3(MRJob):
         nombre=palabras[0]
         if(str(nombre) == str(accion)):
             ultima_coti=float(palabras[1])
-            maximo_sesion=float(palabras[2])
-            minimo_sesion=float(palabras[3])
-            yield(nombre, (ultima_coti, maximo_sesion, minimo_sesion))
+            fecha=palabras[5]
+            yield(nombre, (fecha, ultima_coti))
                             
         
     def reducer(self, accion, valores):
-        cotizaciones = []
-        minimos = []
-        maximos = []
-        for coti, maximo, minimo in valores:
-            cotizaciones.append(coti)
-            minimos.append(minimo)
-            maximos.append(maximo)
-            
-        # calcular valor minimo de cotización
-        valor_minimo = min(minimos)
-        # calcular valor máximo de cotización
-        valor_maximo = max(maximos)
+
+        cotizaciones = list(valores)
         
-        promedio_cotizaciones = sum(cotizaciones) / len(cotizaciones)
+        cotizaciones.sort(key=lambda x: x[0])
+        cotizacion_inicial = cotizaciones[0][1]
+
+        cotizaciones = [coti[1] for coti in cotizaciones]
+        # calcular valor minimo de cotización
+        valor_minimo = min(cotizaciones)
+        # calcular valor máximo de cotización
+        valor_maximo = max(cotizaciones)
+
+        # Ordenar cotizaciones por fecha
 
         # calcular el portentaje de decremento desde el valor inicial de cotización hasta el mínimo
-        decremento_porcentaje = ((promedio_cotizaciones - valor_minimo) / promedio_cotizaciones) * 100
+        decremento_porcentaje = ((cotizacion_inicial - valor_minimo) / cotizacion_inicial) * 100
 
         # calcular el portentaje de incremento desde el valor inicial de cotización hasta el máximo
-        incremento_porcentaje = ((valor_maximo - promedio_cotizaciones) / promedio_cotizaciones) * 100
+        incremento_porcentaje = ((valor_maximo - cotizacion_inicial) / cotizacion_inicial) * 100
 
-        yield(accion, (valor_minimo, valor_maximo, decremento_porcentaje, incremento_porcentaje))
+        yield(accion, (valor_minimo, valor_maximo, decremento_porcentaje, incremento_porcentaje, cotizacion_inicial))
   
 
 
