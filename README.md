@@ -18,6 +18,8 @@ El proyecto se organiza de la siguiente manera:
 - **src**: Contiene el código fuente del proyecto.
   - **extract**: Directorio que contiene los scripts de extracción de datos.
   - **datos**: Directorio donde se almacenan los datos recopilados.
+  - **management**: Directorio donde se almacenan los scripts para procesar los datos.
+
 
 
 ## 🏁 Extrayendo datos <a name = "extract_data"> </a>
