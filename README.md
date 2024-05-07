@@ -4,6 +4,8 @@
 <p align = "center"> Este proyecto consiste en un conjunto de scripts diseñados para recopilar datos financieros de diversas acciones de la bolsa de valores y posteriormente obtener información acerca de ellos. 
 Estos datos incluyen el nombre de la acción, la última cotización, el máximo y mínimo de la sesión, y la fecha y hora de la recopilación.
 <br>
+[![YouTube](https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/YouTube_icon_%282013-2017%29.png/240px-YouTube_icon_%282013-2017%29.png)]([enlace_de_youtube](https://youtu.be/lg9WvsYe3gU))
+
 </p>
 
 ## 📝 Tabla de contenido
