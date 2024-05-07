@@ -101,25 +101,25 @@ El la carpeta `management` están todo lo archivos relacionados con la gestión 
 
 ### Descipción de los script
 
-- `Ejercicio 1`: Genera un lista semanal donde se indica (`Nombre de la acción`, (`valor inicial de cotización`, `valor final de cotización`, `mínimo`, `máximo`))
+- **Ejercicio 1**: Genera un lista semanal donde se indica (`Nombre de la acción`, (`valor inicial de cotización`, `valor final de cotización`, `mínimo`, `máximo`))
 
-- `Ejercicio 2`: Genera un lista mensual donde se indica (`Nombre de la acción`, (`valor inicial de cotización`, `valor final de cotización`, `mínimo`, `máximo`))
+- **Ejercicio 2**: Genera un lista mensual donde se indica (`Nombre de la acción`, (`valor inicial de cotización`, `valor final de cotización`, `mínimo`, `máximo`))
 
-- `Ejercicio 3`: Dado el nombre de una acción y un rango ded fechas, obtiene (`Acción`, (`valor mínimo de cotización`, `valor máximo de cotización`, `porcentaje de decremento desde el valor inicial hasta el mínimo`, `porcentaje de incremento desde el valor inicial hasta el máximo`))
+- **Ejercicio 3**: Dado el nombre de una acción y un rango ded fechas, obtiene (`Acción`, (`valor mínimo de cotización`, `valor máximo de cotización`, `porcentaje de decremento desde el valor inicial hasta el mínimo`, `porcentaje de incremento desde el valor inicial hasta el máximo`))
 
-- `Ejercicio 4`: Dado el nombre de una acción se obtiene (`Acción`, (`valor mínimo mensual`, `valor máximo mensual`, `valor mínimo semanal`, `valor máximo semanal`, `valor mínimo de la última hora`, `valor máximo de la última hora`))
+- **Ejercicio 4**: Dado el nombre de una acción se obtiene (`Acción`, (`valor mínimo mensual`, `valor máximo mensual`, `valor mínimo semanal`, `valor máximo semanal`, `valor mínimo de la última hora`, `valor máximo de la última hora`))
 
-- `Ejercicio 5`: Muestra las 5 acciones que más han subido en la última semana y último mes: (`Semana/Mes`, (`Nombre de la acción`, `diferencia de la acción (precio final-precio inicial)`))
+- **Ejercicio 5**: Muestra las 5 acciones que más han subido en la última semana y último mes: (`Semana/Mes`, (`Nombre de la acción`, `diferencia de la acción (precio final-precio inicial)`))
 
-- `Ejercicio 6`: Muestra las 5 acciones que más han bajado en la última semana y último mes: (`Semana/Mes`, (`Nombre de la acción`, `diferencia de la acción (precio final-precio inicial)`))
+- **Ejercicio 6**: Muestra las 5 acciones que más han bajado en la última semana y último mes: (`Semana/Mes`, (`Nombre de la acción`, `diferencia de la acción (precio final-precio inicial)`))
 
-- `Ejercicio 7`: Dado un porcentaje y un rango de fechas obtiene las acciones que han tenido un incremento de ese porcentaje durante ese periodo (`Acción`, (`Porcentaje de incremento del precio de la acción`, `Porcentaje introducido`))
+- **Ejercicio 7**: Dado un porcentaje y un rango de fechas obtiene las acciones que han tenido un incremento de ese porcentaje durante ese periodo (`Acción`, (`Porcentaje de incremento del precio de la acción`, `Porcentaje introducido`))
 
-- `Extra 1`: Ranking de las acciones con mayor ratio entre la última cotización y el beneficio económico de esa empresa, sirve para saber si una acción está sobrevalorada (`Posición del ranking`, (`Nombre de la acción`, `Ratio`))
+- **Extra 1**: Ranking de las acciones con mayor ratio entre la última cotización y el beneficio económico de esa empresa, sirve para saber si una acción está sobrevalorada (`Posición del ranking`, (`Nombre de la acción`, `Ratio`))
 
-- `Extra 2`: Muestra el tipo de empresa que tiende a tener acciones más altas (`Tipo de empresa`, `Cotización media de ese tipo de empresa`)
+- **Extra 2**: Muestra el tipo de empresa que tiende a tener acciones más altas (`Tipo de empresa`, `Cotización media de ese tipo de empresa`)
 
-- `Extra 3`: Muestra la acción de las empresa fundada antes de los 2000 que tiene el menor porcentaje de incremento de cotización en un día (`Nombre de la Acción`, `Porcentaje de incremento de cotización`)
+- **Extra 3**: Muestra la acción de las empresa fundada antes de los 2000 que tiene el menor porcentaje de incremento de cotización en un día (`Nombre de la Acción`, `Porcentaje de incremento de cotización`)
 
 ### Requisitos previos <a name = "previous_steps_manage"> </a>
 
@@ -157,7 +157,7 @@ Donde `X` es el número del 1 al 3 y `DD-MM-YYY` es el formato del archivo diari
 
 ### Funcionamiento en HDFS
 
-Para esta parte es necesario haber ejecutado los comandos que aparecen en [`Requisitos previos`](#previous_steps_manage)
+Para esta parte es necesario haber ejecutado los comandos que aparecen en [Requisitos Previos](#previous_steps_manage)
 
 1. Subir a HDFS el archivo con la información de las empresas situado en `src`
 
@@ -187,13 +187,13 @@ Donde `X` es el número del 1 al 7
 ```
 python extraX.py -r hadoop hdfs:///user/alumno/proyecto_despliegue/informacion_empresas.csv hdfs:///user/alumno/proyecto_despliegue/datos/DD-MM-YYYY.csv
 ```
-Y si quiere que la información se guarde en un archivo puede añadirle esto:
+Y si quiere que la información se guarde en un archivo puede añadirle:
 
 ```
 --output-dir proyecto_despliegue/extraX
 ```
 
-Donde `X`es el número del 1 al 3 y `DD-MM-YYY` es el formato del archivo diario que quiera consultar
+Donde `X` es el número del 1 al 3 y `DD-MM-YYY` es el formato del archivo diario que quiera consultar
 
 
 ## ✒️ Autores <a name = "authors"> </a>
