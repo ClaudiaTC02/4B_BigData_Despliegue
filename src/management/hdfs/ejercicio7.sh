@@ -28,11 +28,6 @@ hdfs dfs -ls "$directorio_datos" | while read -r archivo; do
 	hdfs dfs -cat "$directorio_datos/$fecha_archivo.csv" | while IFS= read -r linea; do
             echo "$linea,$fecha_archivo" >> "$directorio_datos_local/$archivo_semanal"
         done
-
-	# Agregar la fecha a cada línea del archivo actual y concatenar
-        while IFS= read -r linea; do
-            echo "$linea,$fecha_archivo" >> "$directorio_datos/$archivo_semanal"
-        done < "$directorio_datos/$archivo"
 	
     fi
     

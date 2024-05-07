@@ -46,4 +46,4 @@ archivo_mapreducer="../$directorio_script/ejercicio5.py"
 
 python "$archivo_mapreducer" -r hadoop "hdfs:///user/alumno/$directorio_datos/$archivo_mensual"
 
-hdfs dfs -rm "$directorio_datos/$archivo_semanal"
+hdfs dfs -rm "$directorio_datos/$archivo_mensual"
